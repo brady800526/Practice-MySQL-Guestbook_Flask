@@ -9,7 +9,7 @@ This app is aimed to save guests' comments when guest press save button, and sho
 
 MySQL database is the most common representative database using SQL (Structure Query Language), and we gonna use this database to accomplish this simple app.
 
-Id you want to know more in SQL, here is a link refers to SQL example in this [website](http://www.codedata.com.tw/database/mysql-tutorial-6-crud-maintenance/) writen in Traditional Chinese.
+If you want to know more about SQL, here is a link refers to SQL example in this [website](http://www.codedata.com.tw/database/mysql-tutorial-6-crud-maintenance/) writen in Traditional Chinese.
 
 ## Usage
 
@@ -40,15 +40,17 @@ By entering name "Brady" and comment "This is my first comment" and press the Si
 
 You can easily upload new comment to the guestbook, and see all the comments on the landing page.
 
-## Code
+## Architecture
 
-All the logic are placed in the guestbook.py, and static and templates are simple file.
+All the logic are placed in the guestbook.py, so we will majorly discuss the guestbook.py here.
 
-In the landing page (index.html), we can click the link to a sing up page (sign.html). Then, after finish the form and press 【Sign】, we will send a post request to '/process' route. This route will save the name and comment to database and redirect the guest to the landing page (index.html). Finally, we can see your comment on the landing page and other saved comments.
+In the landing page (index.html), we can click the link to the sign up page (sign.html). Then, after finish the form and press 【Sign】, we will send a post request to '/process' route. This route will save the name and comment to database and redirect the guest to the landing page (index.html). Finally, we can see the comment on the landing page and other saved comments.
 <figure style="text-align: center;">
     <img src="http://i63.tinypic.com/vzzyhz.jpg" alt="Predict PM2.5 Example" style="width: 80%; height: 80%"/>
     <figcaption>The architecture of this app</figcaption>
 </figure>
+
+## Code
 
 #### Setting
 ------------------------------------------------------------------------
@@ -62,7 +64,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 ```
 
-First we start an app wrap by Flask Framework by `app = Flask(__name__)`
+First we start an app initialized by Flask Framework `app = Flask(__name__)`
 
 In order to connect to the database, we specify the database path with prefix `mysql+pymysql://` Put the database username and password `root:root` Followed by hostname, port and MySQL table name `localhost:3306/flask_guestbook`
 
@@ -81,8 +83,8 @@ class Comments(db.Model):
     comment = db.Column(db.String(1000))
 ```
 
-if column will be the primary key with data type Integer.
-name and comment column will be the data type String with 20 and 1000 characters.
+id column will be the primary key with Integer data type.
+name and comment column will be the String data type with 20 and 1000 characters.
 
 #### index route - Show the Landing Page
 ------------------------------------------------------------------------
@@ -96,9 +98,9 @@ def index():
 ```
 
 `Comment.query.all()` will fetch all the data from Comments table.
-Use `render_remplate` will go the the specified page, and we can send variables in the paraenthesis after first param.
+Use `render_remplate` will go the the specified template, and we can send variables in the parathensis after first param.
 
-In the route we will send all the comments queried from comments table to index.html page.
+In the route we will send all the comments queried from comments table to index.html template.
 
 #### sign route - Show the Sing Up Page
 ------------------------------------------------------------------------
@@ -129,6 +131,6 @@ def process():
 
 We will receive the name and comment from the form POST request.
 
-Save the comment by `Comments(name=name, comment=comment)` as signature, put the comment to database to db with `db.sesstion.add(signature)` followed by `db.sesstion.commit`. 
+Save the comment by `Comments(name=name, comment=comment)` as signature, put the comment to database with `db.sesstion.add(signature)` followed by `db.session.commit`. 
 In order to see all the results, we have to query all the comments and print on the landing page. 
-We already to index() view function have already to this, so we can use `redirect(url_for(index))` to go back to index view function.
+index() view function have already do this, so we can use `redirect(url_for(index))` to go back to index() view function. Then we can see all the comments after Sign up the comment.
