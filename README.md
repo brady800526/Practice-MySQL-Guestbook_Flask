@@ -13,7 +13,12 @@ If you want to know more about SQL, here is a link refers to SQL example in this
 
 ## Usage
 
-Download the repo, and under the directory run:
+Download the repo, and under the directory get into Python shell:
+
+    from guestbook.py import db
+    db.create_all()
+
+Exit the shell, under the directory run:
 
     python guestbook.py
 
@@ -134,3 +139,7 @@ We will receive the name and comment from the form POST request.
 Save the comment by `Comments(name=name, comment=comment)` as signature, put the comment to database with `db.sesstion.add(signature)` followed by `db.session.commit`. 
 In order to see all the results, we have to query all the comments and print on the landing page. 
 index() view function have already do this, so we can use `redirect(url_for(index))` to go back to index() view function. Then we can see all the comments after Sign up the comment.
+
+## Conclusion
+
+In this project, we connect MySQL with guestbook page. Save each comment when guest leaving the comment on the sign up page. Finally, show all the comments on the landing page.
