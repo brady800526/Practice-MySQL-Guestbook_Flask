@@ -25,22 +25,22 @@ Exit the shell, under the directory run:
 You will see the landing page.
 
 <figure style="text-align: center;">
-    <img src="http://i63.tinypic.com/23uecs3.png" alt="Predict PM2.5 Example" style="width: 80%; height: 80%"/>
-    <figcaption>Landing Page</figcaption>
+    <img src="http://i63.tinypic.com/23uecs3.png" alt="Landing Page" style="width: 80%; height: 80%"/>
+    <figcaption style="display: block;">Landing Page</figcaption>
 </figure>
 
 By clicking the **Sign the Guest Book** Button, guest can Sign on the Guest Book with Name and Comment (With no Validation).
 
 <figure style="text-align: center;">
-    <img src="http://i65.tinypic.com/2rrp4eq.png" alt="Predict PM2.5 Example" style="width: 80%; height: 80%"/>
-    <figcaption>SignUp Page</figcaption>
+    <img src="http://i65.tinypic.com/2rrp4eq.png" alt="SignUp Page" style="width: 80%; height: 80%"/>
+    <figcaption style="display: block;">SignUp Page</figcaption>
 </figure>
 
 By entering name "Brady" and comment "This is my first comment" and press the Sign button, guest will back to the landing page with new comment show below the heading.
 
 <figure style="text-align: center;">
-    <img src="http://i67.tinypic.com/24ee3qe.png" alt="Predict PM2.5 Example" style="width: 80%; height: 80%"/>
-    <figcaption>Landing Page</figcaption>
+    <img src="http://i67.tinypic.com/24ee3qe.png" alt="Landing Page" style="width: 80%; height: 80%"/>
+    <figcaption style="display: block;">Landing Page</figcaption>
 </figure>
 
 You can easily upload new comment to the guestbook, and see all the comments on the landing page.
@@ -51,8 +51,8 @@ All the logic are placed in the guestbook.py, so we will majorly discuss the gue
 
 In the landing page (index.html), we can click the link to the sign up page (sign.html). Then, after finish the form and press 【Sign】, we will send a post request to '/process' route. This route will save the name and comment to database and redirect the guest to the landing page (index.html). Finally, we can see the comment on the landing page and other saved comments.
 <figure style="text-align: center;">
-    <img src="http://i63.tinypic.com/vzzyhz.jpg" alt="Predict PM2.5 Example" style="width: 80%; height: 80%"/>
-    <figcaption>The architecture of this app</figcaption>
+    <img src="http://i63.tinypic.com/vzzyhz.jpg" alt="The architecture of this app" style="width: 80%; height: 80%"/>
+    <figcaption style="display: block;">The architecture of this app</figcaption>
 </figure>
 
 ## Code
