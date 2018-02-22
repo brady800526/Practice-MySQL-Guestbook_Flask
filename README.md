@@ -25,21 +25,21 @@ Exit the shell, under the directory run:
 You will see the landing page.
 
 <figure style="text-align: center;">
-    <img src="http://i68.tinypic.com/351ehea.png" alt="Landing Page" style="width: 80%; height: 80%"/>
+    <img src="README_img/LandingPage1.png" alt="Landing Page" style="width: 80%; height: 80%"/>
     <figcaption style="display: block;">Landing Page</figcaption>
 </figure>
 
 By clicking the **Sign the Guest Book** Button, guest can Sign on the Guest Book with Name and Comment (With no Validation).
 
 <figure style="text-align: center;">
-    <img src="http://i63.tinypic.com/ev7343.png" alt="SignUp Page" style="width: 50%; height: 50%"/>
+    <img src="README_img/SignupPage.png" alt="SignUp Page" style="width: 50%; height: 50%"/>
     <figcaption style="display: block;">SignUp Page</figcaption>
 </figure>
 
 By entering name "Brady" and comment "This is my first comment" and press the Sign button, guest will back to the landing page with new comment show below the heading.
 
 <figure style="text-align: center;">
-    <img src="http://i65.tinypic.com/v42uio.png" alt="Landing Page" style="width: 80%; height: 80%"/>
+    <img src="README_img/LandingPage2.png" alt="Landing Page" style="width: 80%; height: 80%"/>
     <figcaption style="display: block;">Landing Page</figcaption>
 </figure>
 
@@ -51,7 +51,7 @@ All the logic are placed in the guestbook.py, so we will majorly discuss the gue
 
 In the landing page (index.html), we can click the link to the sign up page (sign.html). Then, after finish the form and press 【Sign】, we will send a post request to '/process' route. This route will save the name and comment to database and redirect the guest to the landing page (index.html). Finally, we can see the comment on the landing page and other saved comments.
 <figure style="text-align: center;">
-    <img src="http://i66.tinypic.com/2r5yexx.jpg" alt="The architecture of this app" style="width: 80%; height: 80%"/>
+    <img src="README_img/Architecture.jpg" alt="The architecture of this app" style="width: 80%; height: 80%"/>
     <figcaption style="display: block;">The architecture of this app</figcaption>
 </figure>
 
