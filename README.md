@@ -15,7 +15,7 @@ If you want to know more about SQL, here is a link refers to SQL example in this
 
 Download the repo, and under the directory get into Python shell:
 
-    from guestbook.py import db
+    from guestbook import db
     db.create_all()
 
 Exit the shell, under the directory run:
